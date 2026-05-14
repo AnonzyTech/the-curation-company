@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23c141bc'/><text x='50' y='50' dy='.3em' font-size='40' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>TCC</text></svg>" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%239333EA'/><text x='50' y='50' dy='.3em' font-size='40' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>TCC</text></svg>" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-full flex flex-col antialiased`}>
         {children}
