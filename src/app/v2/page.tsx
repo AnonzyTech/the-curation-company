@@ -155,6 +155,7 @@ function PremiumTextarea({
   required = true,
   rows = 4,
   hint = "",
+  placeholder = "",
 }: {
   label: string;
   value: string;
@@ -162,6 +163,7 @@ function PremiumTextarea({
   required?: boolean;
   rows?: number;
   hint?: string;
+  placeholder?: string;
 }) {
   return (
     <div className="space-y-2">
@@ -173,6 +175,7 @@ function PremiumTextarea({
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
           rows={rows}
           className="w-full bg-white/10 backdrop-blur-sm border border-[#c141bc]/30 rounded-xl px-5 py-4 text-[#c141bc] placeholder-[#c141bc]/50 transition-all duration-300 focus:outline-none focus:border-[#c141bc] focus:bg-white/20 group-hover:border-[#c141bc]/50 resize-none"
           required={required}
@@ -287,14 +290,6 @@ const itemVariants: Variants = {
       stiffness: 100,
       damping: 15,
     },
-  },
-};
-
-const progressVariants: Variants = {
-  initial: { scaleX: 0 },
-  animate: {
-    scaleX: (currentStep: number, total: number) => (currentStep + 1) / total,
-    transition: { duration: 0.4, ease: "easeOut" as const },
   },
 };
 
@@ -432,6 +427,7 @@ export default function V2Page() {
               <span className="text-sm tracking-[0.2em] uppercase font-medium text-[#c141bc]">
                 The Curation Company
               </span>
+            </div>
           </motion.div>
         </header>
 

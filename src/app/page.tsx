@@ -4,12 +4,13 @@ import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 // Morphing Blob Background
-function MorphingBlob({ className = "" }: { className?: string }) {
+function MorphingBlob({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <div
       className={`absolute blur-3xl opacity-30 animate-blob ${className}`}
       style={{
         background: "linear-gradient(135deg, #9333EA 0%, #C084FC 50%, #F0ABFC 100%)",
+        ...style,
       }}
     />
   );
@@ -131,6 +132,7 @@ function PremiumTextarea({
   required = true,
   rows = 4,
   hint = "",
+  placeholder = "",
 }: {
   label: string;
   value: string;
@@ -138,6 +140,7 @@ function PremiumTextarea({
   required?: boolean;
   rows?: number;
   hint?: string;
+  placeholder?: string;
 }) {
   return (
     <div className="space-y-2">
@@ -149,6 +152,7 @@ function PremiumTextarea({
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
           rows={rows}
           className="w-full bg-white/95 backdrop-blur-sm border-2 border-[#E9D5FF] rounded-xl px-5 py-4 text-[#581C87] placeholder-purple-200/50 transition-all duration-300 focus:outline-none focus:border-[#9333EA] focus:bg-white group-hover:border-[#C084FC] resize-none"
           required={required}
