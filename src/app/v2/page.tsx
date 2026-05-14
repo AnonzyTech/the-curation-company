@@ -432,16 +432,6 @@ export default function V2Page() {
               <span className="text-sm tracking-[0.2em] uppercase font-medium text-[#c141bc]">
                 The Curation Company
               </span>
-            </div>
-            <motion.a
-              href="https://www.thecurationcompany.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              className="text-sm tracking-wider uppercase underline underline-offset-4 text-[#c141bc]/70 hover:text-[#c141bc] transition-colors"
-            >
-              Visit Main Site
-            </motion.a>
           </motion.div>
         </header>
 
@@ -490,64 +480,6 @@ export default function V2Page() {
                   </svg>
                 </span>
               </motion.button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Form Section */}
-        <section className="relative z-10 px-6 md:px-12 pb-20">
-          <div className="max-w-2xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-[#c141bc]/20 shadow-2xl"
-            >
-              <motion.div variants={containerVariants} initial="hidden" animate="visible">
-                <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-bold text-[#c141bc] mb-2 text-center">
-                  Tell us about yourself
-                </motion.h2>
-                <motion.p variants={itemVariants} className="text-[#c141bc]/70 mb-8 text-center">
-                  We would love to know who we are creating for.
-                </motion.p>
-
-                <motion.div variants={itemVariants} className="space-y-6">
-                  <PremiumInput
-                    label="Your Name"
-                    value={formData.recipientName}
-                    onChange={(val) => updateFormData("recipientName", val)}
-                    placeholder="What should we call you?"
-                  />
-                  <PremiumInput
-                    label="Email Address"
-                    value={formData.email}
-                    onChange={(val) => updateFormData("email", val)}
-                    type="email"
-                    placeholder="Where can we reach you?"
-                  />
-                </motion.div>
-
-                <motion.div variants={itemVariants} className="flex justify-between items-center mt-10">
-                  <button
-                    disabled
-                    className="px-6 py-3 rounded-xl border border-[#c141bc]/30 opacity-30 cursor-not-allowed"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <span className="text-sm text-[#c141bc]/50">Press Enter to continue</span>
-                  <button
-                    onClick={nextStep}
-                    className="px-8 py-3 bg-[#c141bc] text-white rounded-xl font-medium tracking-wider uppercase hover:bg-[#a035a0] transition-colors flex items-center gap-2 cursor-pointer"
-                  >
-                    <span>Continue</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </motion.div>
-              </motion.div>
             </motion.div>
           </div>
         </section>
